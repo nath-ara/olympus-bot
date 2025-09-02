@@ -126,14 +126,14 @@ class Warn(commands.Cog):
                 dm_status = "No"
 
             
-            embed = discord.Embed(description=f"**<:olympusUser:1294654665895579721> Target User:** [{user}](https://discord.com/users/{user.id})\n"
-                                              f"**<:olympusMention:1294654604998475856> User Mention:** {user.mention}\n"
-                                              f"**<:olympusDM:1295595078122999915> DM Sent:** {dm_status}\n"
-                                              f"**<:olympusArrow:1297341001341599797> Reason:** {reason_to_send}\n"
-                                              f"**<:olympusQuesMark:1297341037752221747> Total Warns:** {total_warns}",
+            embed = discord.Embed(description=f"**🤦 Target User:** [{user}](https://discord.com/users/{user.id})\n"
+                                              f"**⛓️ User Mention:** {user.mention}\n"
+                                              f"**📧 DM Sent:** {dm_status}\n"
+                                              f"**🏹 Reason:** {reason_to_send}\n"
+                                              f"**⚠️ Total Warns:** {total_warns}",
                                               color=self.color)
             embed.set_author(name=f"Successfully Warned {user.name}", icon_url=self.get_user_avatar(user))
-            embed.add_field(name="<:olympusMod:1295601558985379852> Moderator:", value=ctx.author.mention, inline=False)
+            embed.add_field(name="🚨 Moderator:", value=ctx.author.mention, inline=False)
             embed.set_footer(text=f"Requested by {ctx.author}", icon_url=self.get_user_avatar(ctx.author))
             embed.timestamp = discord.utils.utcnow()
 
@@ -158,7 +158,7 @@ class Warn(commands.Cog):
     async def clearwarns(self, ctx, user: discord.Member):
         try:
             await self.reset_warns(ctx.guild.id, user.id)
-            embed = discord.Embed(description=f"<:olympus_tick:1227866641027698792> | All warnings have been cleared for **{user}** in this guild.", color=self.color)
+            embed = discord.Embed(description=f"🗑️ | All warnings have been cleared for **{user}** in this guild.", color=self.color)
             embed.set_author(name=f"Warnings Cleared", icon_url=self.get_user_avatar(user))
             embed.set_footer(text=f"Requested by {ctx.author}", icon_url=self.get_user_avatar(ctx.author))
             embed.timestamp = discord.utils.utcnow()
