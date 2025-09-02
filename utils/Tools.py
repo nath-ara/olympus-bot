@@ -81,7 +81,7 @@ async def getConfig(guildID):
       if row:
         return {"prefix": row[0]}
       else:
-        defaultConfig = {"prefix": "$"}
+        defaultConfig = {"prefix": "+"}
         await updateConfig(guildID, defaultConfig)
         return defaultConfig
 
@@ -183,7 +183,7 @@ def top_check():
 
         if ctx.author != ctx.guild.owner and ctx.author.top_role.position <= ctx.guild.me.top_role.position:
             embed = discord.Embed(
-                title="<:Denied:1294218790082711553> Access Denied", 
+                title="❌ Access Denied", 
                 description="Your top role must be at a **higher** position than my top role.",
                 color=0x000000
             )
